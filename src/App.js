@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Header from "./components/layout/header/Header.js";
-import { BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css"
 import Footer from "./components/layout/footer/Footer.js";
 import Home from "./components/home/Home.js";
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <HashRouter>
+      <Router>
         <Header />
         {isAuthenticated && <UserOptions user={user} />}
 
@@ -62,7 +62,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
-      </HashRouter>
+      </Router>
     </div>
   );
 }
