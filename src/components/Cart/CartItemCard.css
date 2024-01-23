@@ -1,0 +1,83 @@
+.CartItemCard {
+    display: flex;
+    padding: 1vmax;
+    height: 10vmax;
+    /* align-items: flex-start; */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.removeItem > svg {
+    color: black;
+    margin: 0.8vmax;
+    font-size: 2.5vmax;
+}
+
+.CartItemCard>img {
+    width: 5vmax;
+}
+
+.CartItemCard>div {
+    display: flex;
+    margin: 0.3vmax 1vmax;
+    flex-direction: column;
+}
+
+.CartItemCard>div>a {
+    color: black;
+    font: 600 1.6vmax "Edu SA Beginner";
+    text-decoration: none;
+}
+
+.CartItemCard>div>a:hover {
+    color: rgb(54, 54, 54);
+}
+
+.CartItemCard>div>span {
+    font-size: 1.2vmax;
+    color: black
+}
+
+
+.CartItemCard>div>span>button {
+    background-color: black;
+    font-size: 1vmax;
+    cursor: pointer;
+    border-radius: 5px; 
+    color: white;
+    padding: 0 0.2vmax;
+}
+
+@media screen and (max-width: 600px) {
+    .CartItemCard {
+        padding: 0.5vmax;
+        height: 18vmax;
+        align-items: center;
+    }
+
+    .removeItem > svg {
+        color: black;
+        margin: 0.5vmax;
+        font-size: 4vmax;
+    }
+
+    .CartItemCard>img {
+        width: 10vmax;
+    }
+
+    .CartItemCard>div {
+        margin: 1vmax 1vmax;
+    }
+
+    .CartItemCard>div>a {
+        font-size: 1.4vmax;
+    }
+
+    .CartItemCard>div>span {
+        font-size: 1.2vmax;
+    }
+
+    .CartItemCard>div>span>button {
+        font-size: 1.5vmax;
+    }
+}

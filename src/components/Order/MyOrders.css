@@ -1,0 +1,54 @@
+.myOrdersPage {
+    width: 100vw;
+    max-width: 100%;
+    padding: 0 10vmax;
+    box-sizing: border-box;
+    position: relative;
+    top: 15px;
+    left: 0;
+    height: 55vh;
+    margin-bottom: 3vmax;
+    display: flex;
+    flex-direction: column;
+    font-family: "Edu SA Beginner";
+}
+
+.myOrdersTable {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.myOrdersTable div {
+    font: 300 1.3vmax "Edu SA Beginner";
+    color: black;
+    border: none;
+}
+
+
+.MuiDataGrid-columnHeader {
+    background-color: black;
+    padding: 1vmax !important;
+}
+
+.MuiDataGrid-columnHeader div {
+    color: white;
+    font: 500 1.3vmax 'Poiret One', cursive !important;
+}
+
+.MuiDataGrid-iconSeparator {
+    display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+    .myOrdersPage {
+        padding: 0 2vmax;
+    }
+
+    .myOrdersTable div {
+        font-size: 4vw;
+    }
+
+    .MuiDataGrid-columnHeader {
+        padding: 20px !important;
+    }
+}

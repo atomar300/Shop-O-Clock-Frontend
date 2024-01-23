@@ -1,0 +1,88 @@
+.paymentContainer {
+    display: grid;
+    place-items: center;
+    background-color: grey;
+    height: 100vh;
+}
+
+.paymentForm {
+    width: 22%;
+    height: 70%;
+    background-color: black;
+    border-radius: 15px;
+    padding: 2vmax;
+}
+
+.paymentForm>p {
+    font: 400 2vmax 'Poiret One', cursive;
+    color: white;
+    padding: 1vmax 0;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.paymentForm>div {
+    display: flex;
+    align-items: center;
+    margin: 2vmax 0;
+}
+
+.paymentInput {
+    padding: 1vmax 4vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+}
+
+.paymentForm>div>svg {
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.paymentFormBtn {
+    border: none;
+    background-color: gold;
+    color: black;
+    font: 300 1.1vmax 'Edu SA Beginner';
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .paymentForm {
+        width: 90%;
+    }
+
+    .paymentForm>p {
+        font-size: 8vw;
+        padding: 4vw 0;
+        width: 60%;
+    }
+
+    .paymentForm>div {
+        margin: 10vw 0;
+    }
+
+    .paymentInput {
+        padding: 4vw 10vw;
+    }
+
+    .paymentForm>div>svg {
+        font-size: 6vw;
+    }
+
+    .paymentFormBtn {
+        font-family: 4vw;
+        padding: 4vw;
+    }
+}

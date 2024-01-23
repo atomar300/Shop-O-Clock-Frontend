@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
+
+
+.product-card {
+    position: relative;
+    height: 500px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 5px rgb(204, 204, 204),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px 5px rgb(204, 204, 204);
+    border-radius: 15px;
+    margin: 20px;
+    width: 23vmax;
+}
+
+
+.product-card .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: white;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 5px rgb(231, 231, 231),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px 5px rgb(231, 231, 231);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+
+.product-card:hover .box {
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom left, #d7d2cc, grey 100%);
+}
+
+
+.product-card .box .content {
+    padding: 1vmax;
+    height: 450px;
+    width: 19vmax;
+    font-family: 'Edu SA Beginner', cursive;
+}
+
+
+.product-card .box .content .image {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.product-card .box .content .image img {
+    width: 16vmax;
+    height: 270px;
+    object-fit: contain;
+}
+
+
+.product-card .box .content h3 {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: black;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.product-card .box .content .ratings {
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: 0.5s;
+}
+
+.product-card .box .content .price {
+    margin: 1px;
+    color: black;
+    transition: 0.5s;
+    font-size: large;
+}
+
+
+.product-card:hover .box .content .ratings,
+.product-card:hover .box .content .price,
+.product-card:hover .box .content h3 {
+    color: #fff
+}
+
+
+@media screen and (max-width: 600px) {
+    .product-card {
+        position: relative;
+        height: 60vh;
+        width: 100%;
+    }
+
+    .product-card .box .content {
+        padding: 0.5vmax;
+        height: 100%;
+        width: 100%;
+    }
+    
+    
+    .product-card .box .content .image img {
+        width: 90%;
+        height: 35vh;
+    }
+    
+    
+    .product-card .box .content h3 {
+        margin-top: 5px;
+        font-size: 0.9em;
+    }
+    
+    .product-card .box .content .ratings {
+        margin: 1px;
+    }
+    
+    .product-card .box .content .price {
+        margin: 1px;
+        font-size: 0.9em;
+    }
+}

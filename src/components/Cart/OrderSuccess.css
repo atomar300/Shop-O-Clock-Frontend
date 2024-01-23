@@ -1,0 +1,46 @@
+.orderSuccess {
+    margin: auto;
+    text-align: center;
+    padding: 15vmax 10vmax;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .orderSuccess > svg {
+    font-size: 7vmax;
+    color: black;
+  }
+  .orderSuccess > p {
+    margin: 1vmax;
+    font-size: 2vmax;
+    font-family: 'Poiret One', cursive;;
+  }
+  .orderSuccess > a {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 1vmax 3vmax;
+    cursor: pointer;
+    font: 400 1.2vmax 'Poiret One', cursive;
+    text-decoration: none;
+    margin: 2vmax;
+    border-radius: 10px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .orderSuccess > a {
+      padding: 3vw 6vw;
+      font: 400 4vw "Roboto";
+      margin: 2vmax;
+    }
+  
+    .orderSuccess > svg {
+      font-size: 20vw;
+    }
+    .orderSuccess > p {
+      margin: 2vmax;
+      font-size: 5vw;
+    }
+  }

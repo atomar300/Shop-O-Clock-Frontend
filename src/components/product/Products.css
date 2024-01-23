@@ -1,0 +1,110 @@
+.productsHeading {
+  padding: 1vmax;
+  width: 20vmax;
+  margin: 2vmax auto;
+  border-bottom: 1px solid black;
+  color: black;
+  font: 500 1.5vmax "Poiret One";
+  text-align: center;
+}
+
+
+.sidebar{
+  width: 25%;
+  min-height: 100vh;
+  box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 101;
+  transition: 0.5s;
+}
+.sidebar.active{
+  left: 0;
+}
+.sd-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.sidebar-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.1s;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.800);
+  z-index: 100;
+}
+.sidebar-overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.products {
+  min-height: 100vmin;
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.no-products-found h1{
+  font-family:'Poiret One', cursive;
+  font-weight:300;
+  font-size: 100px;
+  margin: 50px;
+}
+
+.no-products-found h2{
+  font-family: 'Poiret One', cursive;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 6vmax;
+  margin-bottom: 3vmax;
+}
+
+
+.filterBox {
+  width: 15vmax;
+  position: absolute;
+  top: 5vmax;
+  left: 5vmax;
+  right: 5vmax;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .no-products-found h1{
+    font-family:'Poiret One', cursive;
+    font-weight:200;
+    font-size: 100px;
+    margin-bottom: 50px;
+  }
+
+  .sidebar{
+    width: 75%;
+  }
+
+
+  .filterBox {
+    width: 35vmax;
+    position: static;
+    margin: auto;
+  }
+}

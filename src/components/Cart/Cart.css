@@ -1,0 +1,217 @@
+.emptyCart {
+    margin: auto;
+    text-align: center;
+    padding: 10vmax;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyCart>svg {
+    font: 300 5vmax 'Poiret One', cursive;
+    color: grey;
+}
+
+.emptyCart>h1 {
+    font: 300 2vmax 'Poiret One', cursive;
+}
+
+.emptyCart>h1>span {
+    font-size: 1.4vmax;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.emptyCart>a {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1vmax 3vmax;
+    cursor: pointer;
+    font: 300 1.1vmax 'Poiret One', cursive;
+    text-decoration: none;
+}
+
+.cartPage {
+    padding: 5vmax;
+    min-height: 60vh;
+}
+
+.cartHeader {
+    padding: 0 2vmax;
+    background-color: black;
+    width: 90%;
+    box-sizing: border-box;
+    margin: auto;
+    color: white;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    border-radius: 10px;
+}
+
+.cartHeader>p {
+    margin: 10px;
+}
+
+.cartHeader>p:last-child {
+    text-align: end;
+}
+
+.cartContainer {
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
+.cartInput {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: none;
+    width: 180px;
+    height: 2.5vmax;
+    outline: none;
+    font: 300 1vmax 'Poiret One', cursive;
+    color: black;
+}
+
+
+.cartInput>button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    height: 100%;
+    padding: 7px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.cartInput>input {
+    border: none;
+    padding: 0.5vmax;
+    width: 50px;
+    text-align: center;
+    outline: none;
+    color: black;
+}
+
+.cartSubtotal {
+    display: flex;
+    height: 8vmax;
+    margin: auto;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 1vmax;
+    justify-content: flex-end;
+    color: black;
+}
+
+
+.cartGrossTotal {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+}
+
+.cartGrossTotalBox {
+    border: 3px solid grey;
+    margin: 4vmax 4vmax;
+    box-sizing: border-box;
+    padding: 1vmax 0vmax;
+    font: 300 1.5vmax 'Poiret One', cursive;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.cartGrossTotalBox > p {
+    margin: auto;
+}
+
+.checkOutBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkOutBtn>button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.8vmax 4vmax;
+    width: 50%;
+    font-size: 1.5vmax;
+    margin: 1vmax 4vmax;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .emptyCart {
+        min-height: 70vh;
+    }
+
+    .cartPage {
+        padding: 0;
+        min-height: 70vh;
+    }
+
+    .cartHeader {
+        margin-top: 0.1vmax;
+        width: 100%;
+        font: 300 1.7vmax 'Poiret One', cursive;
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+
+    .cartContainer {
+        width: 100%;
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+
+    .cartInput {
+        width: auto;
+        height: 30px;
+        margin: auto;
+    }
+
+    .cartInput>button {
+        height: 100%;
+    }
+
+    .cartInput>input {
+        width: 4vmax;
+        font-size: 1.8vmax;
+    }
+
+    .cartSubtotal {
+        padding: 0.5vmax;
+        height: 20vmax;
+        font-size: 2vmax;
+    }
+
+    .cartGrossTotal {
+        display: grid;
+        grid-template-columns: 0fr 2fr;
+    }
+
+    .cartGrossTotalBox {
+        padding: 2vmax;
+        font-size: 2.3vmax;
+    }
+
+    .checkOutBtn>button {
+        padding: 2vmax 4vmax;
+        width: 100%;
+        font-size: 3vmax;
+    }
+}

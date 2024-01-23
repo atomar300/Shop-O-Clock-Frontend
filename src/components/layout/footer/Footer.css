@@ -1,0 +1,83 @@
+footer {
+    /* margin-top: 10vmax; */
+    padding: 2vmax;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .leftFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .leftFooter > h4 {
+    font-family: 'Poiret One', cursive;
+  }
+  .leftFooter > p {
+    text-align: center;
+    font-size: 1.2vmax;
+  }
+  .leftFooter > img {
+    width: 10vmax;
+    margin: 1vmax;
+    cursor: pointer;
+  }
+  
+  .midFooter {
+    width: 60%;
+    text-align: center;
+  }
+  
+  .midFooter > h3 {
+    font-family: 'Poiret One', cursive;
+    font-size: 2vmax;
+    color: white;
+  }
+  .midFooter > p {
+    font-family: 'Poiret One', cursive;
+    max-width: 60%;
+    margin: 1vmax auto;
+  }
+  
+  .rightFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rightFooter > h4 {
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 0.5vmax;
+  }
+  .rightFooter > a {
+    text-decoration: none;
+    font-size: 2vmax;
+    color: white;
+    transition: all 0.5s;
+    margin: 0.5vmax;
+  }
+  
+  .rightFooter > a:hover {
+    color: gold;
+    text-shadow: 0 0 10px gold, 0 0 10px gold;
+  }
+
+
+  @media only screen and (max-width: 1024px) {
+
+    .leftFooter > h4 {
+      font-size: 12px;
+    }
+
+    .rightFooter > h4 {
+      font-size: 12px;
+    }
+
+    .midFooter > p {
+      font-size: 1vmax;
+    }
+
+  }
