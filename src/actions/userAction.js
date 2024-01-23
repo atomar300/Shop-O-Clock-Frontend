@@ -25,6 +25,7 @@ import {
     RESET_PASSWORD_SUCCESS,
 } from "../constants/userContants"
 import axios from "axios";
+import {baseUrl} from "../Api";
 
 
 // login
@@ -66,15 +67,7 @@ export const loadUser = () => async (dispatch) => {
     try {
         dispatch({ type: LOAD_USER_REQUEST });
 
-
-
-
-        let url = "https://shop-o-clock.onrender.com";
-        const { data } = await axios.get(`${url}/api/v1/me`);
-
-
-
-        // const { data } = await axios.get("/api/v1/me");
+        const { data } = await axios.get(`${baseUrl}/api/v1/me`);
 
         dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
     } catch (error) {

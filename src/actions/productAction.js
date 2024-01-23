@@ -11,20 +11,16 @@ import {
     NEW_REVIEW_SUCCESS,
     NEW_REVIEW_FAIL,
 } from "../constants/productConstants";
-
+import {baseUrl} from "../Api";
 
 
 export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) => async (dispatch) => {
     try {
         dispatch({ type: ALL_PRODUCT_REQUEST });
 
-
-        let url = "https://shop-o-clock.onrender.com";
-
-
-        let link = `${url}/api/v1/products?keyword=${keyword}&page=${currentPage}&minPrice=${price[0]}&maxPrice=${price[1]}&ratings=${ratings}`;
+        let link = `${baseUrl}/api/v1/products?keyword=${keyword}&page=${currentPage}&minPrice=${price[0]}&maxPrice=${price[1]}&ratings=${ratings}`;
         if (category) {
-            link = `${url}/api/v1/products?keyword=${keyword}&page=${currentPage}&minPrice=${price[0]}&maxPrice=${price[1]}&category=${category}&ratings=${ratings}`;
+            link = `${baseUrl}/api/v1/products?keyword=${keyword}&page=${currentPage}&minPrice=${price[0]}&maxPrice=${price[1]}&category=${category}&ratings=${ratings}`;
         }
         const { data } = await axios.get(link);
 
