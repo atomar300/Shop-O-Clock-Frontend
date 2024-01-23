@@ -57,7 +57,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://192.168.2.23:8080",
+  "proxy": "https://shop-o-clock.onrender.com/",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
