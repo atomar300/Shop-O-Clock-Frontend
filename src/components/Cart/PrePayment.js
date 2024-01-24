@@ -11,7 +11,9 @@ const PrePayment = () => {
     const [stripeApiKey, setStripeApiKey] = useState("");
 
     async function getStripeApiKey() {
-        const { data } = await axios.get("/api/v1/stripeapikey");
+        const token = localStorage.getItem("token");
+        const config = { headers: { "Authorization" : `Bearer ${token}` } }
+        const { data } = await axios.get("/api/v1/stripeapikey", config);
         setStripeApiKey(data.stripeApiKey);
     }
 

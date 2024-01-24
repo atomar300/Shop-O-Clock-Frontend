@@ -11,7 +11,7 @@ import {
     ORDER_DETAILS_FAIL,
 } from "../constants/orderConstants";
 import axios from "axios";
-import {baseUrl} from "../Api";
+
 
 
 // create order
@@ -19,9 +19,10 @@ export const createOrder = (order) => async (dispatch) => {
     try {
         dispatch({type: CREATE_ORDER_REQUEST})
 
-        const config = {headers: {"Content-Type": "application/json"},}
+        const token = (localStorage.getItem("token"));
+        const config = {headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},}
 
-        const {data} = await axios.post(`${baseUrl}/api/v1/order/new`, order, config);
+        const {data} = await axios.post(`/api/v1/order/new`, order, config);
 
         dispatch({type: CREATE_ORDER_SUCCESS, payload: data})
         
@@ -39,7 +40,10 @@ export const myOrders = () => async (dispatch) => {
     try {
         dispatch({type: MY_ORDER_REQUEST})
 
-        const {data} = await axios.get(`${baseUrl}/api/v1/orders/me`);
+        const token = localStorage.getItem("token");
+        const config = { headers: { "Authorization" : `Bearer ${token}` } }
+
+        const {data} = await axios.get(`/api/v1/orders/me`, config);
 
         dispatch({type: MY_ORDER_SUCCESS, payload: data.orders})
         
@@ -57,7 +61,10 @@ export const getOrderDetails = (id) => async (dispatch) => {
     try {
         dispatch({type: ORDER_DETAILS_REQUEST})
 
-        const {data} = await axios.get(`${baseUrl}/api/v1/order/${id}`);
+        const token = localStorage.getItem("token");
+        const config = { headers: { "Authorization" : `Bearer ${token}` } }
+
+        const {data} = await axios.get(`/api/v1/order/${id}`, config);
 
         dispatch({type: ORDER_DETAILS_SUCCESS, payload: data.order})
         
