@@ -9,7 +9,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Button from '@mui/material/Button';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 const MyOrders = () => {
   const { loading, error, orders } = useSelector(state => state.myOrders)

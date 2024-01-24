@@ -5,6 +5,7 @@ import MetaData from "../layout/MetaData";
 import "./ConfirmOrder.css";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const ConfirmOrder = () => {
     const { shippingInfo, cartItems } = useSelector((state) => state.cart);
     const { user } = useSelector((state) => state.user);

@@ -7,7 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, loadUser, updateProfile } from "../../actions/userAction"
 import { UPDATE_PROFILE_RESET } from '../../constants/userContants';
 import MetaData from "../layout/MetaData.js";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 const UpdateProfile = () => {
 

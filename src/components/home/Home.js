@@ -6,7 +6,8 @@ import MetaData from '../layout/MetaData';
 import { getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from '../layout/loader/Loader';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 
 const Home = () => {

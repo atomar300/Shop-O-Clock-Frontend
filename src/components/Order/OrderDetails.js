@@ -5,7 +5,8 @@ import MetaData from "../layout/MetaData";
 import { Link, useParams } from "react-router-dom";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../layout/loader/Loader";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
+import toast from 'react-hot-toast';
 
 const OrderDetails = () => {
     const { order, error, loading } = useSelector((state) => state.orderDetails);

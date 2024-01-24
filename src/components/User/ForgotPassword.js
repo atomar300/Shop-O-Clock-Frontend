@@ -4,7 +4,9 @@ import Loader from '../layout/loader/Loader';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, forgotPassword } from "../../actions/userAction"
 import MetaData from "../layout/MetaData.js";
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
+
 
 const ForgotPassword = () => {
 

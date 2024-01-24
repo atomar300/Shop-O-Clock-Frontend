@@ -14,7 +14,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 
 const categories = [

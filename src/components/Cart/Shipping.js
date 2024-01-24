@@ -5,7 +5,8 @@ import { saveShippingInfo } from "../../actions/cartAction";
 import MetaData from "../layout/MetaData";
 import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../Cart/CheckoutSteps";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
+import toast from 'react-hot-toast';
 
 const Shipping = () => {
     const dispatch = useDispatch();

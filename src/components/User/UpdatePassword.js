@@ -6,7 +6,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, updatePassword } from "../../actions/userAction"
 import { UPDATE_PASSWORD_RESET } from '../../constants/userContants';
 import MetaData from "../layout/MetaData.js";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 const UpdatePassword = () => {
 

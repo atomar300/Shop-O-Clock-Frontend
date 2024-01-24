@@ -12,10 +12,10 @@ import {
 import "./Payment.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 import { removeItemsFromCart } from "../../actions/cartAction";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
+import toast from 'react-hot-toast';
 import {apiClient} from "../../ApiClient";
 
 

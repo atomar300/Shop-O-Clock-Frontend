@@ -11,7 +11,8 @@ import MetaData from '../layout/MetaData';
 import { addItemsToCart } from '../../actions/cartAction.js';
 import { Rating, DialogTitle, DialogActions, Dialog, Button, DialogContent } from '@mui/material';
 import { NEW_REVIEW_RESET } from '../../constants/productConstants.js';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 
 const ProductDetails = () => {

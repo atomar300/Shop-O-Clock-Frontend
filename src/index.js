@@ -8,6 +8,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
+import { Toaster } from 'react-hot-toast';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
       <ToastContainer position="bottom-center" autoClose={2000} />
+      <Toaster position="bottom-center" />
       <App />
   </Provider>
 );

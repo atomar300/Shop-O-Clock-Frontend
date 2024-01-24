@@ -5,7 +5,8 @@ import Loader from '../layout/loader/Loader';
 import profilePng from "../../images/user-profile-icon-free-vector.jpg";
 import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, login, register } from "../../actions/userAction"
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 
 
 const LoginSignUp = () => {
