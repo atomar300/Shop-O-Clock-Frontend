@@ -5,6 +5,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
 import Loader from '../layout/loader/Loader';
+import { apiClient } from '../../ApiClient';
+
 
 const PrePayment = () => {
 
@@ -13,7 +15,7 @@ const PrePayment = () => {
     async function getStripeApiKey() {
         const token = localStorage.getItem("token");
         const config = { headers: { "Authorization" : `Bearer ${token}` } }
-        const { data } = await axios.get("/api/v1/stripeapikey", config);
+        const { data } = await apiClient.get("/api/v1/stripeapikey", config);
         setStripeApiKey(data.stripeApiKey);
     }
 
