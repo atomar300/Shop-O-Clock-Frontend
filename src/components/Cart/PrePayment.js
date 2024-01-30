@@ -4,7 +4,7 @@ import Payment from './Payment';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Loader from '../layout/loader/Loader';
-import { apiClient } from '../../apiClient';
+import { ApiClient } from '../../ApiClient';
 
 
 const PrePayment = () => {

@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 import { removeItemsFromCart } from "../../actions/cartAction";
 import toast from 'react-hot-toast';
-import {apiClient} from "../../apiClient";
+import {ApiClient} from "../../ApiClient";
 
 
 const Payment = () => {
