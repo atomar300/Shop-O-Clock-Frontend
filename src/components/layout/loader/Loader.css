@@ -47,3 +47,28 @@
       transform: rotate(360deg);
     }
   }
+
+
+  @media screen and (max-width: 600px) {
+    .loader {
+      font-size: 30px;
+      font-weight: 400;
+      color: black;
+      position: relative;
+    }
+
+    .loader::before {
+      left: 16px;
+      bottom: 10px;
+      width: 15px;
+      height: 15px;
+    }
+
+    .loading>div {
+      top: 65vmax;
+      position: absolute;
+      font-weight: 400;
+      font-size: 20px;
+      font-family: "Edu SA Beginner";
+    }
+}
