@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 import { removeItemsFromCart } from "../../actions/cartAction";
 import toast from 'react-hot-toast';
-import {ApiClient} from "../../ApiClient";
+import {apiClient} from "../../apiClient";
 
 
 const Payment = () => {
@@ -53,7 +53,7 @@ const Payment = () => {
     try {
       const token = localStorage.getItem("token");
       const config = { headers: { "Content-Type": "application/json", "Authorization" : `Bearer ${token}` } };
-      const { data } = await ApiClient.post("/api/v1/payment/process", paymentData, config);
+      const { data } = await apiClient.post("/api/v1/payment/process", paymentData, config);
 
       const client_secret = data.client_secret;
 

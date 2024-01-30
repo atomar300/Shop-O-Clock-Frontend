@@ -10,7 +10,7 @@ import {
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
 } from "../constants/orderConstants";
-import {ApiClient} from "../ApiClient"
+import {apiClient} from "../apiClient"
 
 
 
@@ -22,7 +22,7 @@ export const createOrder = (order) => async (dispatch) => {
         const token = (localStorage.getItem("token"));
         const config = {headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},}
 
-        const {data} = await ApiClient.post(`/api/v1/order/new`, order, config);
+        const {data} = await apiClient.post(`/api/v1/order/new`, order, config);
 
         dispatch({type: CREATE_ORDER_SUCCESS, payload: data})
         
@@ -43,7 +43,7 @@ export const myOrders = () => async (dispatch) => {
         const token = localStorage.getItem("token");
         const config = { headers: { "Authorization" : `Bearer ${token}` } }
 
-        const {data} = await ApiClient.get(`/api/v1/orders/me`, config);
+        const {data} = await apiClient.get(`/api/v1/orders/me`, config);
 
         dispatch({type: MY_ORDER_SUCCESS, payload: data.orders})
         
@@ -64,7 +64,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
         const token = localStorage.getItem("token");
         const config = { headers: { "Authorization" : `Bearer ${token}` } }
 
-        const {data} = await ApiClient.get(`/api/v1/order/${id}`, config);
+        const {data} = await apiClient.get(`/api/v1/order/${id}`, config);
 
         dispatch({type: ORDER_DETAILS_SUCCESS, payload: data.order})
         

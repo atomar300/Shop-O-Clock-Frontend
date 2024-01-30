@@ -4,7 +4,7 @@ import Payment from './Payment';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Loader from '../layout/loader/Loader';
-import { ApiClient } from '../../ApiClient';
+import { apiClient } from '../../apiClient';
 
 
 const PrePayment = () => {
@@ -14,7 +14,7 @@ const PrePayment = () => {
     async function getStripeApiKey() {
         const token = localStorage.getItem("token");
         const config = { headers: { "Authorization" : `Bearer ${token}` } }
-        const { data } = await ApiClient.get("/api/v1/stripeapikey", config);
+        const { data } = await apiClient.get("/api/v1/stripeapikey", config);
         setStripeApiKey(data.stripeApiKey);
     }
 

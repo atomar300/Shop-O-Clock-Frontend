@@ -24,7 +24,7 @@ import {
     RESET_PASSWORD_REQUEST,
     RESET_PASSWORD_SUCCESS,
 } from "../constants/userContants"
-import {ApiClient} from "../ApiClient"
+import {apiClient} from "../apiClient"
 
 
 // login
@@ -33,7 +33,7 @@ export const login = (email, password) => async (dispatch) => {
         dispatch({ type: LOGIN_REQUEST });
 
         const config = { headers: { "Content-Type": "application/json" } }
-        const { data } = await ApiClient.post(`/api/v1/login`, { email, password }, config);
+        const { data } = await apiClient.post(`/api/v1/login`, { email, password }, config);
 
         dispatch({ type: LOGIN_SUCCESS, payload: data.user });
 
@@ -54,7 +54,7 @@ export const register = (userData) => async (dispatch) => {
         // Because there is a image here that's why config is necessary
         const config = { headers: { "Content-Type": "multipart/form-data" } }
         // const config = { headers: { "Content-Type": "application/json" } }
-        const { data } = await ApiClient.post(`/api/v1/register`, userData, config);
+        const { data } = await apiClient.post(`/api/v1/register`, userData, config);
 
         dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
     } catch (error) {
@@ -72,7 +72,7 @@ export const loadUser = () => async (dispatch) => {
         const token = (localStorage.getItem("token"));
         const config = {  headers: {"Authorization" : `Bearer ${token}`}  }
 
-        const { data } = await ApiClient.get(`/api/v1/me`, config);
+        const { data } = await apiClient.get(`/api/v1/me`, config);
 
         dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
     } catch (error) {
@@ -84,7 +84,7 @@ export const loadUser = () => async (dispatch) => {
 // logout
 export const logout = () => async (dispatch) => {
     try {
-        await ApiClient.get(`/api/v1/logout`);
+        await apiClient.get(`/api/v1/logout`);
 
         localStorage.setItem("token", null);
 
@@ -104,7 +104,7 @@ export const updateProfile = (userData) => async (dispatch) => {
         // Because there is a image here that's why config is necessary
         const config = { headers: { "Content-Type": "multipart/form-data", "Authorization" : `Bearer ${token}` } }
  
-        const { data } = await ApiClient.put(`/api/v1/me/update`, userData, config);
+        const { data } = await apiClient.put(`/api/v1/me/update`, userData, config);
 
         dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
     } catch (error) {
@@ -121,7 +121,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
         const token = (localStorage.getItem("token"));
         // Because there is a image here that's why config is necessary
         const config = { headers: { "Content-Type": "application/json", "Authorization" : `Bearer ${token}` } }
-        const { data } = await ApiClient.put(`/api/v1/password/update`, passwords, config);
+        const { data } = await apiClient.put(`/api/v1/password/update`, passwords, config);
 
         dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data.success });
     } catch (error) {
@@ -135,7 +135,7 @@ export const forgotPassword = (email) => async (dispatch) => {
         dispatch({ type: FORGOT_PASSWORD_REQUEST });
 
         const config = { headers: { "Content-Type": "application/json" } }
-        const { data } = await ApiClient.post(`/api/v1/password/forgot`, email, config);
+        const { data } = await apiClient.post(`/api/v1/password/forgot`, email, config);
 
         dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data.message });
     } catch (error) {
@@ -150,7 +150,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
         dispatch({ type: RESET_PASSWORD_REQUEST });
 
         const config = { headers: { "Content-Type": "application/json" } }
-        const { data } = await ApiClient.put(`/api/v1/password/reset/${token}`, passwords, config);
+        const { data } = await apiClient.put(`/api/v1/password/reset/${token}`, passwords, config);
 
         dispatch({ type: RESET_PASSWORD_SUCCESS, payload: data.success });
     } catch (error) {
