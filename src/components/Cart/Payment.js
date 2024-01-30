@@ -14,9 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 import { removeItemsFromCart } from "../../actions/cartAction";
-//import { toast } from "react-toastify";
 import toast from 'react-hot-toast';
-import {apiClient} from "../../ApiClient";
+import {apiClient} from "../../apiClient";
 
 
 const Payment = () => {
@@ -81,7 +80,6 @@ const Payment = () => {
       if (result.error) {
         payBtn.current.disabled = false;
 
-        // alert.error(result.error.message);
         toast.error(result.error.message)
       } else {
         if (result.paymentIntent.status === "succeeded") {

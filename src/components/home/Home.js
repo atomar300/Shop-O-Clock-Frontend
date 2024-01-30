@@ -6,7 +6,6 @@ import MetaData from '../layout/MetaData';
 import { getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from '../layout/loader/Loader';
-//import { toast } from 'react-toastify';
 import toast from 'react-hot-toast';
 
 
@@ -16,14 +15,11 @@ const Home = () => {
     const { loading, error, products } = useSelector(state => state.products)
 
     useEffect(() => {
-        
         if (error) {
             return toast.error(error)
         }
         dispatch(getProduct());
-
     }, [dispatch, error]);
-
 
     return (
         <div>
@@ -47,13 +43,11 @@ const Home = () => {
 
                         <h2 className="homeHeading">Featured Products</h2>
 
-
                         <div className='home-container' id='home-container'>
                             {
                                 products && products.map(p => (<ProductCard product={p} />))
                             }
                         </div>
-
 
                 </div>
             )}
@@ -62,4 +56,3 @@ const Home = () => {
 }
 
 export default Home
-

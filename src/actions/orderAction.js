@@ -10,7 +10,7 @@ import {
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
 } from "../constants/orderConstants";
-import {apiClient} from "../ApiClient"
+import {apiClient} from "../apiClient"
 
 
 

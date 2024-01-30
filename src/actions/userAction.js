@@ -24,8 +24,7 @@ import {
     RESET_PASSWORD_REQUEST,
     RESET_PASSWORD_SUCCESS,
 } from "../constants/userContants"
-import axios from "axios";
-import {apiClient} from "../ApiClient"
+import {apiClient} from "../apiClient"
 
 
 // login

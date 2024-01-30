@@ -3,7 +3,7 @@ import {
     REMOVE_CART_ITEM,
     SAVE_SHIPPING_INFO,
   } from "../constants/cartConstants";
-  import {apiClient} from "../ApiClient"
+import { apiClient } from "../apiClient";
   
   // Add to Cart
   export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
