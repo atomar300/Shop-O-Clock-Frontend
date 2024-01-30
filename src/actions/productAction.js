@@ -11,7 +11,7 @@ import {
     NEW_REVIEW_SUCCESS,
     NEW_REVIEW_FAIL,
 } from "../constants/productConstants";
-import {apiClient} from "../apiClient"
+import {ApiClient} from "../ApiClient"
 
 
 
@@ -23,7 +23,7 @@ export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], ca
         if (category) {
             link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&minPrice=${price[0]}&maxPrice=${price[1]}&category=${category}&ratings=${ratings}`;
         }
-        const { data } = await apiClient.get(link);
+        const { data } = await ApiClient.get(link);
 
         dispatch({
             type: ALL_PRODUCT_SUCCESS,
@@ -44,7 +44,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-        const { data } = await apiClient.get(`/api/v1/product/${id}`);
+        const { data } = await ApiClient.get(`/api/v1/product/${id}`);
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -68,7 +68,7 @@ export const newReview = (reviewData) => async (dispatch) => {
         const token = (localStorage.getItem("token"));
         const config = {  headers: {"Content-Type": "application/json" ,"Authorization" : `Bearer ${token}`}  }
 
-        const { data } = await apiClient.put(`/api/v1/review`, reviewData, config);
+        const { data } = await ApiClient.put(`/api/v1/review`, reviewData, config);
 
         dispatch({
             type: NEW_REVIEW_SUCCESS,

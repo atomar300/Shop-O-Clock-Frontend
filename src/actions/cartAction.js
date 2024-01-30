@@ -3,11 +3,11 @@ import {
     REMOVE_CART_ITEM,
     SAVE_SHIPPING_INFO,
   } from "../constants/cartConstants";
-import { apiClient } from "../apiClient";
+import { ApiClient } from "../ApiClient";
   
   // Add to Cart
   export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
-    const { data } = await apiClient.get(`/api/v1/product/${id}`);
+    const { data } = await ApiClient.get(`/api/v1/product/${id}`);
   
     dispatch({
       type: ADD_TO_CART,
