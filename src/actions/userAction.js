@@ -24,7 +24,6 @@ import {
     RESET_PASSWORD_REQUEST,
     RESET_PASSWORD_SUCCESS,
 } from "../constants/userContants"
-// import {apiClient} from "../apiClient"
 import { ApiHandler } from "../ApiHandler";
 
 

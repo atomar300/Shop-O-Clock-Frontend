@@ -102,12 +102,28 @@ nav a {
   text-decoration: none;
   color: white;
   transition: all 0.5s;
+  position: relative;
+}
+
+.textLink::after{
+  content: "";
+  position: absolute;
+  background-color: gold;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
 }
 
 
 nav a:hover {
   color: gold;
   text-shadow: 0 0 10px gold, 0 0 10px gold;
+}
+
+.textLink:hover:after{
+  width: 100%;
 }
 
 
@@ -134,10 +150,6 @@ header .nav-btn {
   height: 56px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.MuiSpeedDial-fab {
-  background-color: red;
 }
 
 

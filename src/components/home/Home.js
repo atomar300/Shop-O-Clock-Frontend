@@ -56,3 +56,56 @@ const Home = () => {
 }
 
 export default Home
+
+
+
+
+// import React, { useEffect } from 'react'
+// import { BiSolidChevronsDown } from "react-icons/bi";
+// import "./Home.css"
+// import ProductCard from "./ProductCard"
+// import MetaData from '../layout/MetaData';
+// import { getProduct } from "../../actions/productAction";
+// import { useSelector, useDispatch } from "react-redux";
+// import Loader from '../layout/loader/Loader';
+// import toast from 'react-hot-toast';
+// import { Link } from 'react-router-dom';
+
+
+// const Home = () => {
+
+//     const dispatch = useDispatch();
+//     const { loading, error, products } = useSelector(state => state.products)
+
+//     useEffect(() => {
+//         if (error) {
+//             return toast.error(error)
+//         }
+//         dispatch(getProduct());
+//     }, [dispatch, error]);
+
+//     return (
+//         <div>
+
+//             {loading ? (<Loader />) : (
+
+
+//                 <div className='header2'>
+//                     <ul>
+//                         <li><Link>Products</Link></li>
+//                         <li><Link>Home</Link></li>
+//                         <li><Link>About</Link></li>
+//                         <li><Link>Contact</Link></li>
+//                     </ul>
+
+//                     <div>
+//                         <p>Welcome (^_^)</p>
+//                         <h1>BECAUSE IT'S SHOP O'CLOCK SOMEWHERE</h1>
+//                     </div>
+//                 </div>
+//             )}
+//         </div>
+//     )
+// }
+
+// export default Home

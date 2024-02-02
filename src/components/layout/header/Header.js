@@ -63,10 +63,10 @@ function Header() {
             </div>
 
             <nav ref={navRef}>
-                <Link onClick={showNavbar} to="/">Home</Link>
-                <Link onClick={showNavbar} to="/products">Products</Link>
-                <Link onClick={showNavbar} to="/contact">Contact</Link>
-                <Link onClick={showNavbar} to="/about">About</Link>
+                <Link className="textLink" onClick={showNavbar} to="/">Home</Link>
+                <Link className="textLink" onClick={showNavbar} to="/products">Products</Link>
+                <Link className="textLink" onClick={showNavbar} to="/contact">Contact</Link>
+                <Link className="textLink" onClick={showNavbar} to="/about">About</Link>
                 <Link onClick={showNavbar} to="/cart"><AiOutlineShoppingCart /></Link>
                 <Link onClick={showNavbar} to="/login"><BiUserCircle /></Link>
                 <button
