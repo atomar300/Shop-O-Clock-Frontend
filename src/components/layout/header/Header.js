@@ -58,7 +58,6 @@ function Header() {
                             <FaTimes />
                         </button>
                     }
-
                 </form>
             </div>
 

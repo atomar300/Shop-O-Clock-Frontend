@@ -11,7 +11,6 @@ import {
     NEW_REVIEW_SUCCESS,
     NEW_REVIEW_FAIL,
 } from "../constants/productConstants";
-// import {apiClient} from "../apiClient"
 import { ApiHandler } from "../ApiHandler";
 
 

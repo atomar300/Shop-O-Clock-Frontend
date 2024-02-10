@@ -2,7 +2,10 @@
     width: 100vw;
     height: 100vh;
     background-color: white;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
     place-items: center;
     max-width: 100%;
   }
@@ -27,12 +30,11 @@
     border: 5px solid black;
     border-bottom-color: gold;
     box-sizing: border-box;
-    animation: rotation 0.4s linear infinite;
+    animation: rotation 0.5s linear infinite;
   }
 
   .loading>div {
-    top: 35vmax;
-    position: absolute;
+    margin: 1vmax;
     font-weight: 600;
     font-size: 30px;
     font-family: "Edu SA Beginner";
@@ -65,8 +67,6 @@
     }
 
     .loading>div {
-      top: 65vmax;
-      position: absolute;
       font-weight: 400;
       font-size: 20px;
       font-family: "Edu SA Beginner";

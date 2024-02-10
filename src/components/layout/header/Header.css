@@ -35,6 +35,15 @@ header .logo a {
   cursor: pointer;
 }
 
+.search-button{
+  transition: all 0.5s;
+}
+
+.search-button:hover{
+  color: gold;
+  text-shadow: 0 0 10px gold, 0 0 10px gold;
+}
+
 
 header .search-box {
   flex: 1;
