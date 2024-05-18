@@ -52,8 +52,8 @@ export const register = (userData) => async (dispatch) => {
         dispatch({ type: REGISTER_USER_REQUEST });
 
         // Because there is a image here that's why config is necessary
-        const config = { headers: { "Content-Type": "multipart/form-data" } }
-        // const config = { headers: { "Content-Type": "application/json" } }
+        // const config = { headers: { "Content-Type": "multipart/form-data" } }
+        const config = { headers: { "Content-Type": "application/json" } }
         const { data } = await ApiHandler.post(`/api/v1/register`, userData, config);
 
         dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });

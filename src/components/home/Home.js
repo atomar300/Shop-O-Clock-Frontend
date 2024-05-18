@@ -28,26 +28,27 @@ const Home = () => {
 
                 <div>
 
-                        <MetaData title={"Shop O'Clock"} />
+                    <MetaData title={"Shop O'Clock"} />
 
-                        <div className='banner'>
-                            <p>Welcome (^_^)</p>
-                            <h1>BECAUSE IT'S SHOP O'CLOCK SOMEWHERE</h1>
+                    <div className='banner'>
+                        <p>Welcome (^_^)</p>
+                        <h1>BECAUSE IT'S SHOP O'CLOCK SOMEWHERE</h1>
 
-                            <a href="#home-container">
-                                <button>
-                                    <BiSolidChevronsDown size={30} />
-                                </button>
-                            </a>
-                        </div>
+                        <a href="#home-container">
+                            <button>
+                                <BiSolidChevronsDown size={30} />
+                            </button>
+                        </a>
 
-                        <h2 className="homeHeading">Featured Products</h2>
+                    </div>
 
-                        <div className='home-container' id='home-container'>
-                            {
-                                products && products.map(p => (<ProductCard product={p} />))
-                            }
-                        </div>
+                    <h2 className="homeHeading">Featured Products</h2>
+
+                    <div className='home-container' id='home-container'>
+                        {
+                            products && products.map(p => (<ProductCard product={p} />))
+                        }
+                    </div>
 
                 </div>
             )}

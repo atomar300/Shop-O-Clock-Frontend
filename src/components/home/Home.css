@@ -59,7 +59,21 @@
 .banner>h1 {
   font: 300 1.8vmax "Poiret One";
   margin-bottom: 5vmax;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: typing 4s infinite alternate;
 }
+
+
+@keyframes typing{
+  from {width: 0}
+}
+
+/* .banner>h1 {
+  font: 300 1.8vmax "Poiret One";
+  margin-bottom: 5vmax;
+} */
 
 .banner>a {
   height: 50px;
@@ -75,12 +89,15 @@
   border-radius: 25px;
   transition: all 0.5s;
   width: 9vmax;
+  box-shadow: 16px 14px 20px black;
+  overflow: hidden;
 }
 
 .banner>a>button:hover {
   background-color: transparent;
   color: white;
 }
+
 
 .homeHeading {
   text-align: center;

@@ -7,8 +7,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, loadUser, updateProfile } from "../../actions/userAction"
 import { UPDATE_PROFILE_RESET } from '../../constants/userContants';
 import MetaData from "../layout/MetaData.js";
-// import { toast } from 'react-toastify';
 import toast from 'react-hot-toast';
+import imageCompression from 'browser-image-compression';
+
+
 
 const UpdateProfile = () => {
 
@@ -35,18 +37,30 @@ const UpdateProfile = () => {
     };
 
 
-    const updateProfileDataChange = (e) => {
-        const reader = new FileReader();
-
-        reader.onload = () => {
-            if (reader.readyState === 2) {
-                setAvatarPreview(reader.result);
-                setAvatar(reader.result);
+    const updateProfileDataChange = async (event) => {
+        const imageFile = event.target.files[0];
+            const options = {
+                maxSizeMB: 1,
+                maxWidthOrHeight: 1920,
+                useWebWorker: true,
             }
-        };
-
-        reader.readAsDataURL(e.target.files[0]);
-
+            const compressedFile = await imageCompression(imageFile, options);
+            const reader = new FileReader();
+            reader.readAsDataURL(compressedFile);
+            reader.onloadend = () => {
+                const base64String = reader.result;
+                setAvatar(base64String);
+                setAvatarPreview(base64String);
+            }
+            
+        // const reader = new FileReader();
+        // reader.onload = () => {
+        //     if (reader.readyState === 2) {
+        //         setAvatarPreview(reader.result);
+        //         setAvatar(reader.result);
+        //     }
+        // };
+        // reader.readAsDataURL(e.target.files[0]);
     };
 
 

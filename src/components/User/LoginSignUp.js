@@ -6,6 +6,7 @@ import profilePng from "../../images/user-profile-icon-free-vector.jpg";
 import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, login, register } from "../../actions/userAction"
 import toast from 'react-hot-toast';
+import imageCompression from 'browser-image-compression';
 
 
 const LoginSignUp = () => {
@@ -57,23 +58,44 @@ const LoginSignUp = () => {
     };
 
 
-    const registerDataChange = (e) => {
-        if (e.target.name === "avatar") {
+    // const registerDataChange = (e) => {
+    //     if (e.target.name === "avatar") {
+    //         const reader = new FileReader();
+
+    //         reader.onload = () => {
+    //             if (reader.readyState === 2) {
+    //                 setAvatarPreview(reader.result);
+    //                 setAvatar(reader.result);
+    //             }
+    //         };
+
+    //         reader.readAsDataURL(e.target.files[0]);
+    //     }
+    //     else {
+    //         setUser({ ...user, [e.target.name]: e.target.value });
+    //     }
+    // };
+
+    const registerDataChange = async (event) => {
+        if (event.target.name === "avatar") {
+            const imageFile = event.target.files[0];
+            const options = {
+                maxSizeMB: 1,
+                maxWidthOrHeight: 1920,
+                useWebWorker: true,
+            }
+            const compressedFile = await imageCompression(imageFile, options);
             const reader = new FileReader();
-
-            reader.onload = () => {
-                if (reader.readyState === 2) {
-                    setAvatarPreview(reader.result);
-                    setAvatar(reader.result);
-                }
-            };
-
-            reader.readAsDataURL(e.target.files[0]);
+            reader.readAsDataURL(compressedFile);
+            reader.onloadend = () => {
+                const base64String = reader.result;
+                setAvatar(base64String);
+                setAvatarPreview(base64String);
+            }
+        } else {
+            setUser({ ...user, [event.target.name]: event.target.value });
         }
-        else {
-            setUser({ ...user, [e.target.name]: e.target.value });
-        }
-    };
+    }
 
 
 
@@ -189,7 +211,7 @@ const LoginSignUp = () => {
                                     type="file"
                                     name="avatar"
                                     accept="image/*"
-                                    onChange={registerDataChange}
+                                    onChange={e => registerDataChange(e)}
                                 />
                             </div>
                             <input type="submit" value="Register" className="signUpBtn" />
